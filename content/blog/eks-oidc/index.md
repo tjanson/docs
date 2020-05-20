@@ -73,7 +73,7 @@ Once the Pod is running, the Service Account annotation will be automatically
 managed by a [Kubernetes dynamic admission controller][k8s-dynamic-webhook] run
 by EKS on your behalf.
 
-The [AWS EKS webhook][eks-webhook] manages Pod identity, and injects STS
+The [AWS EKS webhook][eks-webhook] manages Pod identity and injects STS
 credentials into the Pod to use with the S3 role.
 
 With the credentials, the app can successfully upload data to S3.
