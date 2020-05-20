@@ -13,7 +13,7 @@ to assign fine-grained access control of AWS services. The AWS IAM entities map 
 services.
 
 Together, AWS IAM and Kubernetes RBAC enable least-privileged access for your
-apps, scoped to the appropriate policies and user requirements.
+apps scoped to the appropriate policies and user requirements.
 
 [k8s-rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 
@@ -21,7 +21,7 @@ apps, scoped to the appropriate policies and user requirements.
 
 ## Overview
 
-In <100 lines of code we'll demonstrate how EKS Pods can use AWS IAM to create
+In less than 100 lines of code, we'll demonstrate how EKS Pods can use AWS IAM to create
 fine-grained permissions for apps that integrate with other AWS services.
 
 * [Pod Access Control](#pod-access-control)
@@ -40,7 +40,7 @@ Continuing with the example from the [AWS blog post][aws-pod-iam], when an [S3 a
 an object to a bucket with the AWS SDK, it will need write access to S3.
 
 When a Pod is launched with a particular Service Account, the OIDC provider works
-with Kubernetes to verify the Pod's identity, and in turn collaborates with the
+with Kubernetes to verify the Pod's identity, and in turn, collaborates with the
 [AWS Secure Token Service (STS)][aws-sts] to grant the Pod temporary
 credentials to use with the IAM role.
 
@@ -60,7 +60,7 @@ We'll use the OIDC provider URL and Amazon Resource Name (ARN) to compose the
 [AssumeRoleWithWebIdentity][aws-assume-role-web], and S3 IAM policies that will
 be attached to a new S3 IAM role.
 
-After the role is configured, a Service Account for the S3 Pod will be
+After the role is configured, a Service Account for the S3 Pod is
 created, and annotated with the ARN of the S3 role to bind the two together.
 
 ![Create the AWS IAM and Kubernetes Service Account for the Pod](iam.svg)
